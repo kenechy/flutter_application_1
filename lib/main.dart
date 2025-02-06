@@ -33,7 +33,7 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter is awesome'),
+        title: const Text('My App'),
       ),
       body: const HomePage(),
       floatingActionButton: FloatingActionButton(
