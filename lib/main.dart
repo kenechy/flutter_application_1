@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp (const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,28 +10,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello, Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
+      home: const RootPage(),
     );
   }
 }
 
-class RootPageState extends StatefulWidget {
-  const RootPageState({super.key});
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
 
   @override
-  State<RootPageState> createState() => RootPageStateState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class RootPageStateState extends State<RootPageState> {
+class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          debugPrint('FloatingActionButton pressed');
+        },
+        child: const Icon(Icons.add_sharp),
+      ),
+    );
   }
 }
